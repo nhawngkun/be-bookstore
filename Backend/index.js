@@ -26,7 +26,14 @@ app.listen(process.env.PORT || 8881, () => {
 app.get('/', (req, res) => {
     res.send('Backend is running!');
 });
-
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://f41c-2402-800-61d3-eb3d-15ac-5cc1-a3a0-b9ff.ngrok-free.app'
+    ],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true
+}));
 
 // DÙNG router
 app.use('/', router);
