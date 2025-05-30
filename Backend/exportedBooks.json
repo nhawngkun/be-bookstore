@@ -1,0 +1,79 @@
+[
+  {
+    "id": "17473851585171812",
+    "name": "Dế Mèn Phiêu Lưu Ký",
+    "lang": "Vietnamese",
+    "category": "Fiction",
+    "image": "https://salt.tikicdn.com/cache/w1200/ts/product/17/26/08/6fdf72977e6f6b3567fc09ef58a2fd20.jpg",
+    "title": "Tác phẩm kinh điển của Tô Hoài kể về cuộc phiêu lưu của chú Dế Mèn",
+    "link": "",
+    "content": "Dế Mèn Phiêu Lưu Ký là tác phẩm văn học thiếu nhi nổi tiếng của nhà văn Tô Hoài kể về cuộc phiêu lưu của chú Dế Mèn. Cuộc hành trình bắt đầu từ lòng kiêu ngạo, gây họa cho Dế Choắt, và kết thúc bằng những bài học về tình bạn và lòng dũng cảm.",
+    "description": "Tác phẩm văn học thiếu nhi kinh điển của Việt Nam"
+  },
+  {
+    "id": "17473851585323404",
+    "name": "Truyện Kiều",
+    "lang": "Vietnamese",
+    "category": "Poetry",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Kim_Van_Kieu.jpg/330px-Kim_Van_Kieu.jpg",
+    "title": "Tác phẩm thơ lục bát kinh điển của đại thi hào Nguyễn Du",
+    "link": "",
+    "content": "Trăm năm trong cõi người ta,\nChữ tài chữ mệnh khéo là ghét nhau.\nTrải qua một cuộc bể dâu,\nNhững điều trông thấy mà đau đớn lòng.",
+    "description": "Kiệt tác thơ lục bát Việt Nam"
+  },
+  {
+    "id": "17473851585378994",
+    "name": "Nhà Giả Kim",
+    "lang": "Vietnamese",
+    "category": "Fiction",
+    "image": "https://salt.tikicdn.com/cache/w1200/ts/product/6f/2c/8d/c0ca3ede0fc4d3095cb21cfa144613d3.jpg",
+    "title": "Cuốn tiểu thuyết triết lý của Paulo Coelho về hành trình tìm kiếm vận mệnh",
+    "link": "",
+    "content": "Chàng chăn cừu Santiago từ Tây Ban Nha bắt đầu hành trình theo đuổi giấc mơ tìm kho báu và khám phá ra vận mệnh của chính mình. Anh học được Ngôn ngữ của Vũ trụ và sự khôn ngoan từ Nhà Giả Kim.",
+    "description": "Tiểu thuyết về hành trình tìm kiếm vận mệnh cá nhân"
+  },
+  {
+    "id": "17473851585425345",
+    "name": "Tôi Thấy Hoa Vàng Trên Cỏ Xanh",
+    "lang": "Vietnamese",
+    "category": "Fiction",
+    "image": "https://salt.tikicdn.com/cache/w1200/ts/product/f5/ca/32/c292528bbe4ee89a918b1dcf954d1a93.jpg",
+    "title": "Tiểu thuyết của Nguyễn Nhật Ánh về tuổi thơ miền quê",
+    "link": "",
+    "content": "Tác phẩm kể về tuổi thơ yên bình, trong sáng và đầy cảm xúc của hai anh em ở một làng quê miền Trung. Những mâu thuẫn, ghen tị, yêu thương đều hòa quyện trong bối cảnh làng quê đầy chất thơ.",
+    "description": "Tiểu thuyết về tuổi thơ miền quê Việt Nam"
+  },
+  {
+    "id": "17473851585551421",
+    "name": "Lược Sử Thời Gian",
+    "lang": "Vietnamese",
+    "category": "Science",
+    "image": "https://salt.tikicdn.com/cache/750x750/ts/product/9a/c8/95/333d5dfc1ece4ba287cae9dcaa75a799.jpg.webp",
+    "title": "Tác phẩm khoa học phổ thông của Stephen Hawking",
+    "link": "",
+    "content": "Tác phẩm giải thích những khái niệm vật lý và vũ trụ học như Big Bang, lỗ đen, không-thời gian, thuyết tương đối và thuyết lượng tử bằng ngôn ngữ phổ thông cho mọi người cùng tiếp cận.",
+    "description": "Sách khoa học phổ thông về vũ trụ và thời gian"
+  },
+  {
+    "id": "123456789",
+    "name": "Sách cũcũ",
+    "lang": "Vietnamese",
+    "category": "Science",
+    "image": "https://link.jpg",
+    "title": "Sách khoa học hay cười",
+    "link": "",
+    "content": "Nội dung chi tiết sách...",
+    "description": "Giới thiệu ngắn gọn về sách"
+  },
+  {
+    "id": "123456789",
+    "name": "Sách cũcũ",
+    "lang": "Vietnamese",
+    "category": "Science",
+    "image": "https://link.jpg",
+    "title": "Sách khoa học hay cười",
+    "link": "",
+    "content": "Nội dung chi tiết sách...",
+    "description": "Giới thiệu ngắn gọn về sách"
+  }
+]
