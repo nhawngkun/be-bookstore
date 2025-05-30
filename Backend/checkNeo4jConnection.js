@@ -30,10 +30,10 @@ async function checkConnections() {
       description: "Environment variables"
     },
     {
-      uri: "bolt://localhost:7690",
+      uri: "bolt://localhost:7687",
       user: "neo4j",
       password: "thang044",
-      description: "Default port 7690"
+      description: "Default port 7687"
     },
     {
       uri: "bolt://localhost:7687",
