@@ -20,9 +20,13 @@ app.use(cors({
 
 const port = process.env.PORT || 8881;
 
-app.listen(port, () => {
-    console.log(`🚀 Server is running on port ${port}`);
+app.listen(process.env.PORT || 8881, () => {
+    console.log('🚀 Server is running on port 8881');
 });
+app.get('/', (req, res) => {
+    res.send('Backend is running!');
+});
+
 
 // DÙNG router
 app.use('/', router);
