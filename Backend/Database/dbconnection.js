@@ -19,16 +19,16 @@ const attemptConnections = async () => {
     },
     // Kết nối 2: Localhost 7690 (mặc định cho ứng dụng này)
     {
-      uri: "bolt://localhost:7690",
+      uri: "bolt://localhost:7687",
       user: "neo4j",
       password: "thang044",
-      description: "Default port 7690"
+      description: "Default port 7687"
     },
     // Kết nối 3: Localhost 7687 (cổng Neo4j mặc định)
     {
       uri: "bolt://localhost:7687",
       user: "neo4j",
-      password: "thang044", 
+      password: "thang044",
       description: "Default Neo4j port 7687"
     }
   ];
@@ -37,20 +37,20 @@ const attemptConnections = async () => {
   let successConfig = null;
 
   console.log("Attempting to connect to Neo4j...");
-  
+
   for (const config of connections) {
     try {
       console.log(`Trying connection: ${config.description}`);
       console.log(`URI: ${config.uri}, User: ${config.user}`);
-      
+
       const tempDriver = neo4j.driver(
         config.uri,
         neo4j.auth.basic(config.user, config.password)
       );
-      
+
       // Kiểm tra kết nối
       await tempDriver.verifyConnectivity();
-      
+
       // Nếu thành công, lưu lại driver và config
       driver = tempDriver;
       successConfig = config;
@@ -70,7 +70,7 @@ const attemptConnections = async () => {
       session: () => {
         throw new Error("Neo4j connection failed. Please check your database connection.");
       },
-      close: () => {}
+      close: () => { }
     };
   }
 
