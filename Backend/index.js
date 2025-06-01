@@ -12,24 +12,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({
-    origin: ["http://localhost:3000", "http://localhost:5173"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true
-}));
-
-const port = process.env.PORT || 8881;
-
-app.listen(process.env.PORT || 8881, () => {
-    console.log('🚀 Server is running on port 8881');
-});
-app.get('/', (req, res) => {
-    res.send('Backend is running!');
-});
+// ✅ Cấu hình CORS: thêm domain frontend đã deploy
 app.use(cors({
     origin: [
-        'http://localhost:5173',
-        'https://f41c-2402-800-61d3-eb3d-15ac-5cc1-a3a0-b9ff.ngrok-free.app'
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "https://bookstoreudpt.vercel.app"  // ← thêm domain Vercel
     ],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
@@ -38,5 +26,13 @@ app.use(cors({
 // DÙNG router
 app.use('/', router);
 
-// ❌ KHÔNG gọi DbConnect() nữa!
-// vì dbconnection.js đã kết nối sẵn rồi khi import
+// Route xác nhận server hoạt động
+app.get('/', (req, res) => {
+    res.status(200).json({ message: "BookStore backend is running!" });
+});
+
+// ✅ Di chuyển xuống dưới cùng
+const port = process.env.PORT || 8881;
+app.listen(port, () => {
+    console.log(`🚀 Server is running on port ${port}`);
+});

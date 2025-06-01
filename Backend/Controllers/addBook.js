@@ -5,9 +5,9 @@ const addBook = async (req, res) => {
     const session = driver.session()
     try {
         const id = uuidv4()
-        const { name, lang, category, image, title, link, content, description,author } = req.body
-       
+        const { name, lang, category, image, title, link, content, description, author } = req.body
 
+        // Chỉ thêm sách vào Neo4j
         const result = await session.run(
             `CREATE (b:Book {
                 id: $id, name: $name, lang: $lang, category: $category,

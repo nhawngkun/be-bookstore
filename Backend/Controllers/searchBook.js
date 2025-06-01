@@ -1,48 +1,40 @@
 import express from 'express';
-import neo4j from 'neo4j-driver';
+import driver from '../Database/dbconnection.js';
 
 const router = express.Router();
-const driver = neo4j.driver(
-    'bolt://localhost:7687',
-    neo4j.auth.basic('neo4j', 'thang044')
-);
 
 const searchBook = async (req, res) => {
     const session = driver.session();
     try {
         const { query } = req.query;
 
-        if (!query) {
+        if (!query || !query.trim()) {
             return res.status(400).json([]);
         }
 
-        let cypherQuery = '';
-        let param = '';
+        const param = query.trim().toLowerCase();
 
-        if (query.startsWith('category:')) {
-            param = query.replace('category:', '').trim();
-            cypherQuery = `MATCH (b:Book)
-                           WHERE toLower(b.category) CONTAINS toLower($param)
-                           RETURN b`;
-        } else if (query.startsWith('author:')) {
-            param = query.replace('author:', '').trim();
-            cypherQuery = `MATCH (b:Book)
-                           WHERE toLower(b.author) CONTAINS toLower($param)
-                           RETURN b`;
-        } else {
-            param = query;
-            cypherQuery = `MATCH (b:Book)
-                           WHERE toLower(b.name) CONTAINS toLower($param)
-                           OR toLower(b.title) CONTAINS toLower($param)
-                           OR toLower(b.category) CONTAINS toLower($param)
-                           OR toLower(b.author) CONTAINS toLower($param)
-                           RETURN b`;
-        }
+        // Câu lệnh Cypher đã được chỉnh sửa để tránh lỗi lọc sai
+        const cypherQuery = `
+            MATCH (b:Book)
+            OPTIONAL MATCH (b)-[:WRITTEN_BY]->(a:Author)
+            OPTIONAL MATCH (b)-[:BELONGS_TO]->(c:Category)
+            WITH b, a, c,
+                toLower(b.name) AS bookName,
+                toLower(b.title) AS bookTitle,
+                toLower(a.name) AS authorName,
+                toLower(c.name) AS categoryName
+            WHERE bookName CONTAINS $param
+               OR bookTitle CONTAINS $param
+               OR authorName CONTAINS $param
+               OR categoryName CONTAINS $param
+            RETURN DISTINCT b
+        `;
 
         const result = await session.run(cypherQuery, { param });
-
         const books = result.records.map(record => record.get('b').properties);
-        res.status(200).json(books);
+
+        return res.status(200).json(books);
     } catch (error) {
         console.error('Search error:', error);
         res.status(500).json({ message: 'Internal server error' });
